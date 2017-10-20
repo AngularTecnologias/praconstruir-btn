@@ -1,0 +1,39 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.angularlabs.praconstruirbtn'
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.angularlabs.praconstruirbtn'
+                artifactId 'praconstruirbtn'
+
+                name 'praconstruir-btn'
+                description 'Biblioteca Android que permite utilizar um botão para solicitar orçamentos no Pra Construir'
+                url 'https://github.com/AngularTecnologias/praconstruir-btn'
+
+                licenses {
+                    license {
+                        name 'MIT'
+                        url 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'angularlabs' //YOUR ID
+                        name 'Angular Tecnologias' //YOUR NAME
+                        email 'dev@angularlabs.com.br'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/AngularTecnologias/praconstruir-btn.git'
+                    developerConnection 'https://github.com/AngularTecnologias/praconstruir-btn.git'
+                    url 'https://github.com/AngularTecnologias/praconstruir-btn'
+
+                }
+            }
+        }
+    }
+}
