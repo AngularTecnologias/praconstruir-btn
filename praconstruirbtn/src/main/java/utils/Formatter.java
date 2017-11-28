@@ -17,7 +17,7 @@ public class Formatter {
      * @param context The activity calling the method
      * @return Uri with query parameters
      */
-    public static Uri listToUri(List<long[]> list, Context context) {
+    public static Uri listToUri(List<long[]> list, String partnerToken, Context context) {
         Uri.Builder builder = new Uri.Builder();
 
         String protocol = "https";
@@ -38,6 +38,8 @@ public class Formatter {
                     builder.appendQueryParameter("q", getItems(array));
             }
         }
+
+        builder.appendQueryParameter("p", partnerToken);
 
         return builder.build();
     }

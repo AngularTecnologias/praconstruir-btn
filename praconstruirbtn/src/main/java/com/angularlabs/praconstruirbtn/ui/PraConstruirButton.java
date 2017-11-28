@@ -28,12 +28,12 @@ public class PraConstruirButton extends android.support.v7.widget.AppCompatButto
      * @param list Array list of arrays
      * @param context The activity calling the method
      */
-    public void addProductListAndSetListener(final List<long[]> list, final Context context) {
+    public void addProductListAndSetListener(final List<long[]> list, final String partnerToken, final Context context) {
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Formatter.listToUri(list, context));
+                intent.setData(Formatter.listToUri(list, partnerToken, context));
                 context.startActivity(intent);
             }
         });

@@ -8,7 +8,7 @@ Primeiramente, abra no Android Studio o arquivo **build.gradle** de seu app e ad
 
 ```gradle
 dependencies {
-    compile 'com.angularlabs.praconstruirbtn:praconstruirbtn:1.0.0'
+    compile 'com.angularlabs.praconstruirbtn:praconstruirbtn:1.0.1'
 }
 ```
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-Declare o botão em sua _Activity_ utilizando a id que foi informada no layout, desta forma:
+Declare uma variável com seu token de parceiro e declare o botão em sua _Activity_ utilizando a id que foi informada no layout, desta forma:
 ```java
 public class MainActivity extends AppCompatActivity {
     
@@ -49,13 +49,16 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             
+            // Substitua o valor abaixo por seu token obtido com o PraConstruir
+            String partnerToken = "MEU-TOKEN";
+            
             PraConstruirButton praConstruirButton = (PraConstruirButton) findViewById(R.id.praconstruir_button);
     }
     
 }
 ```
 
-Por último, inicialize a lista, adicione os produtos, unidades e quantidades, e passe a lista ao botão junto com o _Context_ (no caso da _Activity_, seria o **this**).
+Por último, inicialize a lista, adicione os produtos, unidades e quantidades, e passe a lista ao botão junto com seu token de parceiro e o _Context_ (no caso da _Activity_, seria o **this**).
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -65,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            
+            // Substitua o valor abaixo por seu token obtido com o PraConstruir
+            String partnerToken = "MEU-TOKEN";
             
             PraConstruirButton praConstruirButton = (PraConstruirButton) findViewById(R.id.praconstruir_button);
             
@@ -74,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
             productsList.add(new long[]{119005, 12631, 10});
             productsList.add(new long[]{119016, 12691, 30});
             
-            praConstruirButton.addProductListAndSetListener(productsList, this);
+            // Adicione a lista, seu token de parceiro e o contexto
+            praConstruirButton.addProductListAndSetListener(productsList, partnerToken, this);
     }
     
 }
