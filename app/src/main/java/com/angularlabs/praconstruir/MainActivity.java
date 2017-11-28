@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String partnerToken = "MEU-TOKEN";
+
         PraConstruirButton praConstruirButton = (PraConstruirButton) findViewById(R.id.praconstruir_save_button);
         /* Para criar um novo item:
          long[] item = new long[]{productId, unitId, amount};
@@ -27,6 +29,6 @@ public class MainActivity extends AppCompatActivity {
         list.add(new long[]{111007, 9531, 30});
         list.add(new long[]{111006, 9531, 20});
 
-        praConstruirButton.addProductListAndSetListener(list, this);
+        praConstruirButton.addProductListAndSetListener(list, partnerToken, this);
     }
 }
